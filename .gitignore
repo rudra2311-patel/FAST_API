@@ -1,3 +1,50 @@
-env/
+# --- Python ---
 __pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.log
+*.sqlite3
+*.db
+instance/
 .env
+.env.*
+*.env
+
+# --- Virtual Environments ---
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+
+# --- Editor / IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Build / Distribution ---
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db
+
+# --- Alembic cache ---
+migrations/__pycache__/
+
+# --- Pytest / Coverage ---
+.coverage
+htmlcov/
+.cache/
+.pytest_cache/
+
+# --- Other project configs (optional) ---
+# local database files or test data
+*.bak
+*.tmp
