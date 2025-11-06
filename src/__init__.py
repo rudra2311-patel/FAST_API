@@ -11,13 +11,13 @@ async def lifespan(app: FastAPI):
     print(f"Shutting down...")
 
 
-version = "v1"
+version1 = "v1"
 app = FastAPI(
 
     title="Books API",
     description="A simple Books API built with FastAPI",
-    version=version,
+    version=version1,
     lifespan=lifespan,
 )
 
-app.include_router(book_router, prefix=f"/api{version}/books", tags=["books"])
+app.include_router(book_router, prefix=f"/api{version1}/books", tags=["books"])
