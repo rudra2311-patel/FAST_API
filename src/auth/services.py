@@ -12,6 +12,13 @@ class UserService:
         result = await session.exec(statement)
         user = result.first()
         return user 
+    
+    async def get_user_by_id(self, user_id: str, session: AsyncSession):
+        statement = select(User).where(User.id == user_id)
+        
+        result = await session.exec(statement)
+        user = result.first()
+        return user 
        
     
     async def user_exists(self, email: str, session: AsyncSession):
