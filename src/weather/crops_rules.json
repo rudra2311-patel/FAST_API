@@ -1,0 +1,383 @@
+{
+  "generic": {
+    "fungal_risk": {
+      "conditions": {
+        "humidity": ">75",
+        "temperature_between": [15, 28]
+      },
+      "severity": "high",
+      "message": "High fungal risk detected due to high humidity and moderate temperature conditions.",
+      "advice": "Avoid overhead irrigation, apply preventive fungicide if needed, and improve airflow around plants."
+    },
+    "bacterial_risk": {
+      "conditions": {
+        "rain_probability": ">70",
+        "rainfall_mm": ">10"
+      },
+      "severity": "medium",
+      "message": "Bacterial infection risk after prolonged wet conditions.",
+      "advice": "Improve drainage, avoid mechanical damage to plants during wet periods."
+    },
+    "viral_vector_risk": {
+      "conditions": {
+        "temperature": ">28",
+        "humidity": "<60"
+      },
+      "severity": "medium",
+      "message": "Viral vector activity may increase in warm, dry conditions.",
+      "advice": "Monitor for insect vectors, use appropriate vector control measures if needed."
+    },
+    "pest_risk": {
+      "conditions": {
+        "temperature": ">30",
+        "humidity": "<50"
+      },
+      "severity": "medium",
+      "message": "Increased pest risk in warm, dry conditions.",
+      "advice": "Monitor for spider mites and whiteflies, use biological control when possible."
+    },
+    "heat_stress": {
+      "conditions": {
+        "temperature": ">34",
+        "humidity": "<40"
+      },
+      "severity": "high",
+      "message": "Heat stress risk detected. High temperatures may affect crop health.",
+      "advice": "Increase irrigation frequency, apply mulch to retain moisture, reduce field operations during peak heat."
+    },
+    "wind_damage": {
+      "conditions": {
+        "wind_speed": ">40"
+      },
+      "severity": "high",
+      "message": "Strong wind alert. Risk of physical damage to crops.",
+      "advice": "Provide support or staking for susceptible crops, avoid field operations until winds subside."
+    },
+    "flood_risk": {
+      "conditions": {
+        "rainfall_mm": ">50",
+        "consecutive_rain_days": ">=2"
+      },
+      "severity": "critical",
+      "message": "⚠️ FLOOD RISK: Heavy and continuous rainfall detected.",
+      "advice": "Prepare drainage systems, move sensitive equipment to higher ground, consider evacuation measures for low-lying areas."
+    }
+  },
+
+  "tomato": {
+    "tomato_late_blight": {
+      "conditions": {
+        "humidity": ">90",
+        "temperature_between": [7, 20],
+        "consecutive_rain_days": ">=1"
+      },
+      "severity": "critical",
+      "message": "⚠️ TOMATO LATE BLIGHT RISK: High humidity and cool, wet conditions detected.",
+      "advice": "Apply systemic fungicide immediately if recommended. Remove and destroy infected plant debris. Monitor closely for disease symptoms."
+    },
+    "tomato_early_blight": {
+      "conditions": {
+        "humidity": ">80",
+        "temperature_between": [18, 28],
+        "rain_probability": ">40"
+      },
+      "severity": "high",
+      "message": "Tomato early blight risk: Moderate temperature, high humidity and rain forecast.",
+      "advice": "Rotate crops if possible, remove infected lower leaves, consider preventive fungicide application."
+    },
+    "tomato_bacterial_spot": {
+      "conditions": {
+        "rain_probability": ">70",
+        "temperature_between": [20, 30],
+        "humidity": ">80"
+      },
+      "severity": "high",
+      "message": "Tomato bacterial spot risk after prolonged wet conditions.",
+      "advice": "Avoid overhead irrigation, remove infected plant material, improve air circulation around plants."
+    },
+    "tomato_leaf_mold": {
+      "conditions": {
+        "humidity": ">85",
+        "temperature_between": [18, 26]
+      },
+      "severity": "high",
+      "message": "tomatoleafmoldrisk_high_humidity_and_mod_temp",
+      "advice": "improve_ventilation_reduce_leaf_wetness_apply_recommended_fungicide"
+    },
+    "tomato_septoria_leaf_spot": {
+      "conditions": {
+        "humidity": ">80",
+        "temperature_between": [15, 25],
+        "rain_probability": ">50"
+      },
+      "severity": "medium",
+      "message": "tomatoseptoriarisk_wet_and_cool_to_moderate_temp",
+      "advice": "remove_lower_leaves_improve_drainage_and_apply_fungicide_if_needed"
+    },
+    "tomato_spider_mites": {
+      "conditions": {
+        "temperature": ">30",
+        "humidity": "<45"
+      },
+      "severity": "medium",
+      "message": "spidermiterisk_warm_and_dry_conditions",
+      "advice": "monitor_with_sticky_traps_introduce_predatory_mites_or_apply_miticide"
+    },
+    "tomato_target_spot": {
+      "conditions": {
+        "humidity": ">80",
+        "temperature_between": [22, 28]
+      },
+      "severity": "medium",
+      "message": "tomatotargetspotrisk_fungal_conditions",
+      "advice": "remove_infected_tissue_and_consider_preventive_sprays"
+    },
+    "tomato_viral_ty_lcv": {
+      "conditions": {
+        "temperature": ">28",
+        "humidity": "<60"
+      },
+      "severity": "high",
+      "message": "tylcv_risk_due_to_high_temp_and_vector_activity",
+      "advice": "monitor_whiteflies_apply_vector_control_and_use_resistant_varieties_if_available"
+    },
+    "tomato_viral_tmv": {
+      "conditions": {
+        "temperature": ">25",
+        "consecutive_rain_days": ">=0"
+      },
+      "severity": "medium",
+      "message": "tmv_risk_can_increase_with_human_handling_and_unhygienic_conditions",
+      "advice": "practice_tool_sanitation_and_remove_infected_plants"
+    }
+  },
+
+  "potato": {
+    "potato_late_blight": {
+      "conditions": {
+        "humidity": ">90",
+        "temperature_between": [7, 20],
+        "consecutive_rain_days": ">=1"
+      },
+      "severity": "critical",
+      "message": "potatolateblightrisk_cool_wet_and_high_humidity",
+      "advice": "apply_recommended_blotch_fungicide_and_remove_infected_tubers"
+    },
+    "potato_early_blight": {
+      "conditions": {
+        "humidity": ">80",
+        "temperature_between": [18, 28]
+      },
+      "severity": "high",
+      "message": "potatoearlyblightrisk_warm_humid_conditions",
+      "advice": "practice_crop_rotation_and_remove_infected_debris_apply_fungicide"
+    }
+  },
+
+  "apple": {
+    "apple_scab": {
+      "conditions": {
+        "humidity": ">85",
+        "temperature_between": [10, 22],
+        "rain_probability": ">40"
+      },
+      "severity": "high",
+      "message": "applescab_risk_due_to_cool_wet_conditions",
+      "advice": "apply_protective_spray_and_prune_to_improve_airflow"
+    },
+    "apple_black_rot": {
+      "conditions": {
+        "humidity": ">80",
+        "temperature_between": [18, 28],
+        "rain_probability": ">50"
+      },
+      "severity": "medium",
+      "message": "appleblackrotrisk_warm_wet_periods",
+      "advice": "remove_rotten_fruit_and_prune_infected_wood"
+    },
+    "apple_cedar_apple_rust": {
+      "conditions": {
+        "humidity": ">80",
+        "temperature_between": [15, 25],
+        "rain_probability": ">30"
+      },
+      "severity": "medium",
+      "message": "cedar_apple_rust_favors_warm_humid_conditions",
+      "advice": "remove_infected_branches_and_consider_resistant_varieties"
+    }
+  },
+
+  "grape": {
+    "grape_black_rot": {
+      "conditions": {
+        "humidity": ">80",
+        "temperature_between": [20, 28],
+        "rain_probability": ">40"
+      },
+      "severity": "high",
+      "message": "grapeblackrotrisk_due_to_humid_warm_conditions",
+      "advice": "remove_infected_berries_and_consider_preventive_sprays"
+    },
+    "grape_esca": {
+      "conditions": {
+        "temperature": ">25",
+        "humidity": ">60"
+      },
+      "severity": "medium",
+      "message": "esca_black_measles_risk_in_warm_humid_conditions",
+      "advice": "maintain_vine_health_prune_and_remove_dead_wood"
+    },
+    "grape_leaf_blight": {
+      "conditions": {
+        "humidity": ">75",
+        "rain_probability": ">30",
+        "temperature_between": [18, 26]
+      },
+      "severity": "medium",
+      "message": "grapeleafblightrisk_humid_and_moderate_temp",
+      "advice": "improve_airflow_and_remove_infected_leaves"
+    }
+  },
+
+  "corn": {
+    "corn_gray_leaf_spot": {
+      "conditions": {
+        "humidity": ">80",
+        "temperature_between": [20, 30],
+        "rain_probability": ">40"
+      },
+      "severity": "medium",
+      "message": "corn_gray_leaf_spot_risk_in_warm_humid_conditions",
+      "advice": "use_resistant_varieties_and_manage_crop_residue"
+    },
+    "corn_common_rust": {
+      "conditions": {
+        "humidity": ">75",
+        "temperature_between": [15, 25]
+      },
+      "severity": "medium",
+      "message": "cornrust_conditions_favor_cooler_nights_and_humidity",
+      "advice": "monitor_for_spores_and_consider_resistant_hybrids"
+    },
+    "corn_northern_leaf_blight": {
+      "conditions": {
+        "humidity": ">80",
+        "rain_probability": ">30",
+        "temperature_between": [18, 26]
+      },
+      "severity": "medium",
+      "message": "northern_leaf_blight_risk_in_wet_moderate_temperatures",
+      "advice": "rotate_crops_and_manage_infected_residue"
+    }
+  },
+
+  "cherry": {
+    "cherry_powdery_mildew": {
+      "conditions": {
+        "humidity": ">75",
+        "temperature_between": [18, 28]
+      },
+      "severity": "medium",
+      "message": "cherrypowderymildewrisk_in_humid_mild_temp",
+      "advice": "improve_canopy_airflow_and_apply_recommended_fungicide"
+    }
+  },
+
+  "orange": {
+    "orange_hlb": {
+      "conditions": {
+        "temperature": ">20",
+        "humidity": ">60"
+      },
+      "severity": "high",
+      "message": "citrus_greening_risk_monitor_vector_activity",
+      "advice": "monitor_for_psyllids_and_remove_infected_trees_early"
+    }
+  },
+
+  "peach": {
+    "peach_bacterial_spot": {
+      "conditions": {
+        "rain_probability": ">60",
+        "humidity": ">75",
+        "temperature_between": [20, 30]
+      },
+      "severity": "high",
+      "message": "peachbacterialspotrisk_after_wet_periods",
+      "advice": "avoid_wounding_fruit_and_improve_draining_practices"
+    }
+  },
+
+  "pepper_bell": {
+    "pepper_bacterial_spot": {
+      "conditions": {
+        "rain_probability": ">60",
+        "humidity": ">75",
+        "temperature_between": [20, 30]
+      },
+      "severity": "high",
+      "message": "pepperbacterialspotrisk_after_prolonged_wet_conditions",
+      "advice": "use_patience_in_field_operations_and_remove_infected_areas"
+    }
+  },
+
+  "blueberry": {
+    "blueberry_healthy_check": {
+      "conditions": {
+        "humidity": "<95",
+        "temperature_between": [5, 30]
+      },
+      "severity": "low",
+      "message": "blueberrynormal_conditions",
+      "advice": "regular_monitoring"
+    }
+  },
+
+  "strawberry": {
+    "strawberry_leaf_scorch": {
+      "conditions": {
+        "temperature": ">30",
+        "humidity": "<40"
+      },
+      "severity": "medium",
+      "message": "strawberryleafscorchrisk_in_hot_dry_conditions",
+      "advice": "increase_irrigation_and_provide_shade_if_possible"
+    }
+  },
+
+  "squash": {
+    "squash_powdery_mildew": {
+      "conditions": {
+        "humidity": ">75",
+        "temperature_between": [18, 28]
+      },
+      "severity": "medium",
+      "message": "squashpowderymildewrisk_in_humid_moderate_temp",
+      "advice": "improve_spacing_and_apply_approved_fungicide"
+    }
+  },
+
+  "soybean": {
+    "soybean_healthy_check": {
+      "conditions": {
+        "temperature_between": [15, 30],
+        "humidity": [30, 85]
+      },
+      "severity": "low",
+      "message": "soybeannormal_conditions",
+      "advice": "regular_monitoring"
+    }
+  },
+
+  "raspberry": {
+    "raspberry_healthy_check": {
+      "conditions": {
+        "temperature_between": [8, 28],
+        "humidity": [30, 90]
+      },
+      "severity": "low",
+      "message": "raspberrynormal_conditions",
+      "advice": "regular_monitoring"
+    }
+  }
+}
