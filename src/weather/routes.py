@@ -76,8 +76,8 @@ async def weather_risk(
             advice=risk["advice"]
         )
         session.add(log)
-        session.commit()
-        session.refresh(log)
+        await session.commit()
+        await session.refresh(log)
 
         # High severity → create notification entry
         if risk["severity"] in ["high", "critical"]:
@@ -88,7 +88,7 @@ async def weather_risk(
                 message=risk["message"]
             )
             session.add(notif)
-            session.commit()
+            await session.commit()
 
         return {"weather": weather, "risk": risk}
 
@@ -126,8 +126,8 @@ async def test_weather_risk(payload: dict, session: Session = Depends(get_sessio
                 advice=risk["advice"]
             )
             session.add(log)
-            session.commit()
-            session.refresh(log)
+            await session.commit()
+            await session.refresh(log)
 
         return {"weather": weather, "risk": risk}
 
