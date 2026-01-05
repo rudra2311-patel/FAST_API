@@ -9,6 +9,7 @@ from src.weather.routes import router as weather_router
 from src.farms.routes import router as farm_router
 from src.notifications.routes import router as notifications_router
 from src.translation.routes import router as translation_router
+from src.fcm.routes import router as fcm_router
 
 # ⏱ Import Scheduler Initializer
 from src.weather.tasks import init_scheduler
@@ -18,6 +19,9 @@ from src.weather.websocket_routes import ws_router
 from src.weather.alert_monitor import alert_monitor
 from src.weather.redis_pubsub import redis_pubsub as redis_pubsub_handler
 
+# 🔥 Import FCM Service
+from src.fcm import FCMService
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -25,6 +29,9 @@ async def lifespan(app: FastAPI):
 
     # Initialize DB
     await init_db()
+
+    # 🔥 Initialize FCM Service
+    FCMService.initialize()
 
     # Start background weather scheduler
     init_scheduler()
@@ -63,6 +70,7 @@ app.include_router(weather_router,prefix=f"/api/{version1}/weather",tags=["weath
 app.include_router(farm_router,   prefix=f"/api/{version1}/farms",  tags=["farms"])
 app.include_router(notifications_router, prefix=f"/api/{version1}/notifications", tags=["notifications"])
 app.include_router(translation_router, tags=["translation"])  # Already has /api/v1/translate prefix
+app.include_router(fcm_router,    prefix=f"/api/{version1}/fcm",    tags=["fcm"])  # 🔥 FCM routes
 
 # 🔔 WebSocket Router (no /api/v1 prefix for WebSocket)
 app.include_router(ws_router, prefix="/ws", tags=["websockets"])
