@@ -11,7 +11,11 @@ instance/
 .env
 .env.*
 *.env
+
+# --- Documentation (exclude specific docs but allow README and LICENSE) ---
 *.md
+!README.md
+!LICENSE
 
 # --- Virtual Environments ---
 .venv/
