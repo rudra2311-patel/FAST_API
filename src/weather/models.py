@@ -69,8 +69,13 @@ class NotificationLog(SQLModel, table=True):
     severity: str
     message: str
     sent: int = 0  # 0 = pending, 1 = sent
+    is_read: bool = Field(default=False)  # Track if user read this notification
+    fcm_message_id: str | None = Field(default=None, max_length=500)  # FCM message ID for tracking
 
     created_at: datetime = Field(
         default_factory=datetime.utcnow,
         sa_column=Column(pg.TIMESTAMP, nullable=False)
     )
+    
+    # Additional metadata for deduplication
+    notification_hash: str | None = Field(default=None, max_length=100)  # Hash for deduplication
