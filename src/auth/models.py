@@ -1,5 +1,6 @@
 from sqlmodel import Column, Field, SQLModel
 from datetime import datetime
+from typing import Optional
 import uuid
 import sqlalchemy.dialects.postgresql as pg
 
@@ -22,6 +23,13 @@ class User(SQLModel, table=True):
     updated_at: datetime = Field(
         default_factory=datetime.now,
         sa_column=Column(pg.TIMESTAMP, nullable=False)
+    )
+    
+    # FCM (Firebase Cloud Messaging) fields
+    fcm_token: Optional[str] = Field(default=None, max_length=500)
+    fcm_token_updated_at: Optional[datetime] = Field(
+        default=None,
+        sa_column=Column(pg.TIMESTAMP, nullable=True)
     )
 
     def __repr__(self) -> str:
