@@ -11,6 +11,7 @@ instance/
 .env
 .env.*
 *.env
+*.md
 
 # --- Virtual Environments ---
 .venv/
@@ -43,6 +44,26 @@ migrations/__pycache__/
 htmlcov/
 .cache/
 .pytest_cache/
+
+# --- Firebase / Sensitive Files (NEVER COMMIT) ---
+firebase-service-account.json
+*service-account*.json
+serviceAccountKey.json
+*firebase*.json
+
+# --- Docker / Deployment (Optional - exclude if not needed) ---
+Dockerfile
+docker-compose.yml
+nginx.conf
+.dockerignore
+
+# --- Test Scripts (Optional - can commit if needed) ---
+test_*.py
+
+# --- Architecture Diagrams & Documentation ---
+*.txt
+*ARCHITECTURE*.txt
+*DIAGRAM*.txt
 
 # --- Other project configs (optional) ---
 # local database files or test data
